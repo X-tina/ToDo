@@ -1,0 +1,14 @@
+<div class = "modal-header">
+  <h1>New task:</h1>
+<tr><td>
+  <%= simple_form_for task, remote: true do |f| %>
+    <div class = "modal-body">
+      <%= f.input :note %>
+      <%= f.input :completed %>
+    </div>
+    <div class = "modal-footer">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</td></tr>
+</div>

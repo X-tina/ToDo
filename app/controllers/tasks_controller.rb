@@ -6,9 +6,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    @tasks = tasks_order
-    
-    redirect_to root_path
+    @tasks = tasks_order    
   end
 
   private

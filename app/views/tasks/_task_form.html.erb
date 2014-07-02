@@ -1,14 +1,13 @@
 <div class = "modal-header">
   <h1>New task:</h1>
-<tr><td>
+
   <%= simple_form_for task, remote: true do |f| %>
     <div class = "modal-body">
       <%= f.input :note %>
-      <%= f.input :completed %>
+      <%= f.input :completed, as: :string, input_html: { class: "datepicker" } %>
     </div>
     <div class = "modal-footer">
       <%= f.submit "Save", class: "btn btn-primary" %>
     </div>
   <% end %>
-</td></tr>
 </div>

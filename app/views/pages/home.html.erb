@@ -10,15 +10,15 @@
 
     <table class = "table table-hover table-bordered">
 
-      <head>
+      <thead>
        <tr>
          <th> Note </th>
          <th> Created at </th>
          <th> Completed </th>
        </tr>
-     </head>
+     </thead>
 
-      <body>
+      <tbody>
         <% @tasks.each do |task| %>
           <tr>
             <td> <%= task.note %> </td>
@@ -26,7 +26,7 @@
             <td class = "text-success"> <%= task.completed %></td>
           </tr>
         <% end %>
-      </body>
+      </tbody>
 
     </table>
 

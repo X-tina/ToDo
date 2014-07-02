@@ -9,6 +9,11 @@ class TasksController < ApplicationController
     @tasks = tasks_order    
   end
 
+  def destroy
+    @task = task_find.destroy
+    @tasks = tasks_order
+  end
+
   private
 
   def task_params

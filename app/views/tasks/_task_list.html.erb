@@ -15,6 +15,7 @@
          <th> Note </th>
          <th> Created at </th>
          <th> Completed </th>
+         <th> Action </th>
        </tr>
      </thead>
 
@@ -24,6 +25,10 @@
             <td> <%= task.note %> </td>
             <td class = "text-info"> <%= task.created_at  %> </td>
             <td class = "text-success"> <%= task.completed %></td>
+            <td> <%= link_to task_path(task), remote: true, data: { confirm: "Are you sure?" }, method: :delete do %>
+                 <i class = "icon-remove"> </i>
+                 <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

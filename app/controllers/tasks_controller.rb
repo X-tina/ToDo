@@ -7,9 +7,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    @tasks = tasks_order
-
-    render :hide_form
+    save_task
   end
 
   def edit
@@ -20,9 +18,7 @@ class TasksController < ApplicationController
   def update
     @task = task_find
     @task.update_attributes(task_params)
-    @tasks = tasks_order
-
-    render :hide_form
+    save_task
   end
 
   def destroy
@@ -38,6 +34,15 @@ class TasksController < ApplicationController
 
   def task_find
     Task.find(params[:id])
+  end
+
+  def save_task
+    if @task.save 
+      @tasks = tasks_order
+      render :hide_form
+    else
+      render :show_form
+    end
   end
 
 end

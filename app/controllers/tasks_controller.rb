@@ -6,8 +6,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
-    save_task
+    @task = Task.new(task_params)
+    @tasks = tasks_order
+    save_task    
   end
 
   def edit

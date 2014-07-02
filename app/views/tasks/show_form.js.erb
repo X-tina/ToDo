@@ -1,0 +1,4 @@
+m = $('#modal').html('<%= j(render 'task_form', task: @task) %>');
+m.modal('show');
+
+$('#modal').integrateDatepicker();

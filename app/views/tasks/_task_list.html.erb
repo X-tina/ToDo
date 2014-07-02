@@ -1,0 +1,34 @@
+<div class = "container" style = "text-align: center;">
+
+  <% if @tasks.empty? %>
+
+    <span class = "text-warning">
+      There are no tasks!
+    </span>
+
+  <% else %>
+
+    <table class = "table table-hover table-bordered">
+
+      <thead>
+       <tr>
+         <th> Note </th>
+         <th> Created at </th>
+         <th> Completed </th>
+       </tr>
+     </thead>
+
+      <tbody>
+        <% tasks.each do |task| %>
+          <tr>
+            <td> <%= task.note %> </td>
+            <td class = "text-info"> <%= task.created_at  %> </td>
+            <td class = "text-success"> <%= task.completed %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+    
+ <% end %>   
+</div>

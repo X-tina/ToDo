@@ -1,7 +1,7 @@
 <div class = "modal-header">
   <h1>New task:</h1>
 
-  <%= simple_form_for task, remote: true do |f| %>
+  <%= simple_form_for task do |f| %>
     <div class = "modal-body">
       <%= f.input :note %>
       <%= f.input :completed, as: :string, input_html: { class: "datepicker" } %>

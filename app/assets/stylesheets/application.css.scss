@@ -18,4 +18,14 @@
 
  .form-actions {
    background-color: white;
- }  
+ }
+
+ .logout {
+   margin-bottom: 2px;
+   strong {
+     font-size: 15px;
+   }
+   span {
+     float: right;
+   }
+ }

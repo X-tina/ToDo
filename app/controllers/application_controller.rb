@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   layout :layout_by_controller
 
   def tasks_order
-    Task.order('created_at desc').limit(10)
+    Task.accessible_by(current_ability).order('created_at desc').limit(10)
   end
 
   protected

@@ -7,23 +7,29 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.user = current_user
+    authorize! :create, @task
     @tasks = tasks_order
-    save_task    
+    save_task
   end
 
   def edit
     @task = task_find
+    authorize! :edit, @task
     render :show_form
   end
 
   def update
     @task = task_find
-    @task.update_attributes(task_params)
+    @task.assign_attributes(task_params)
+    authorize! :update, @task
     save_task
   end
 
   def destroy
     @task = task_find.destroy
+    authorize! :destroy, @task
+    @task.destroy
     @tasks = tasks_order
   end
 

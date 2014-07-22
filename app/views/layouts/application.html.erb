@@ -13,10 +13,8 @@
         <div class="logout"> 
           <strong> <%= current_user.email %> </strong>
           <span> <%= link_to 'logout', destroy_user_session_path, method: :delete %> </span>
-        </div>
-        
+        </div>      
           
-      
         <div class="center" style="text-align: center;">
           <h1>To Do<h1>
           	<%= link_to "New task", new_task_path, class: 'btn btn-primary', remote: true %>

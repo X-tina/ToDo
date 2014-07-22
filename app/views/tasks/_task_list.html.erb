@@ -9,7 +9,7 @@
   <% else %>
 
     <table class = "table table-hover table-bordered">
-
+      <span> You have <%= pluralize(tasks.count, 'task' )%> </span>
       <thead>
        <tr>
          <th> Note </th>
@@ -20,11 +20,12 @@
      </thead>
 
       <tbody>
+        <div class="task-table" id="tasks">
         <% tasks.each do |task| %>
-          <tr>
+          <tr id="<%= dom_id(task) %>">
             <td> <%= task.note %> </td>
-            <td class = "text-info"> <%= task.created_at  %> </td>
-            <td class = "text-success"> <%= task.completed %></td>
+            <td class = "task-info"> <%= task.created_at  %> </td>
+            <td class = "task-complited"> <%= task.completed %></td>
             <td> <%= link_to edit_task_path(task), remote: true do %>
                    <i class = "icon-edit"> </i>
                  <% end %>

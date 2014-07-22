@@ -23,6 +23,7 @@ class TasksController < ApplicationController
     @task = task_find
     @task.assign_attributes(task_params)
     authorize! :update, @task
+    @tasks = tasks_order
     save_task
   end
 
@@ -49,11 +50,13 @@ class TasksController < ApplicationController
   end
 
   def save_task
-    if @task.save 
-      @tasks = tasks_order
-      render :hide_form
-    else
-      render :show_form
+    respond_to do |format|
+      if @task.save 
+        format.html { render :hide_form }
+      else
+        format.html { render :show_form }
+      end
+      format.js { render :hide_form }
     end
   end
 

@@ -27,10 +27,15 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = task_find.destroy
+    @task = task_find
     authorize! :destroy, @task
     @task.destroy
     @tasks = tasks_order
+    respond_to do |format|
+      format.html { redirect_to tasks_url }
+      format.json { head :ok }
+      format.js
+    end
   end
 
   private

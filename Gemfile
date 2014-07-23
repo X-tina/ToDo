@@ -32,3 +32,5 @@ gem 'haml'
 
 gem 'devise'
 gem 'cancan'
+
+gem "jquery-ui-rails"

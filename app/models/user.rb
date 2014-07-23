@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_many :tasks, dependent: :destroy
+
+  def name
+  	email.split('@').first
+  end
 end

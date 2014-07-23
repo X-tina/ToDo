@@ -1,3 +1,3 @@
 $('#task-list').html('<%= j(render partial: 'tasks/task_list', locals: {tasks: @tasks}) %>');
 $('#modal').modal('hide');
-$('tr#<%= dom_id(@task) %>').effect('highlight');
+$('tr#<%= dom_id(@task) %>').effect('highlight',{ duration: 2000 });

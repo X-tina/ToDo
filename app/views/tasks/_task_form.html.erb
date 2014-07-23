@@ -6,7 +6,7 @@
 </div>
 
 <%= simple_form_for task, remote: true do |f| %>
-  <div class = "modal-body">
+  <div class = "modal-body" id="<%= dom_id(task) %>">
     <%= f.input :note %>
     <%= f.input :completed, as: :string, input_html: { class: "datepicker", value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil } %>
   </div>

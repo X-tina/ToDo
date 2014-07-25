@@ -7,9 +7,10 @@
     </span>
 
   <% else %>
-
+    <div>You have <span id="task_count"> <%= pluralize(@tasks.count, 'task') %> </span> </div>
+  </br>
     <table class = "table table-hover table-bordered">
-      <!--<span> You have <id="task-count"> <%= pluralize(tasks.count, 'task' )%></span> -->
+      
       <thead>
        <tr>
          <th> Note </th>

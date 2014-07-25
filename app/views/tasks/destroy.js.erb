@@ -1,1 +1,2 @@
 $('#<%= dom_id(@task) %>').remove();
+$('#task_count').text('<%= pluralize(@tasks.count, 'task') %>');

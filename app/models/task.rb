@@ -6,6 +6,8 @@ class Task < ActiveRecord::Base
   validate :future_completed_date
   validate :user, presence: true
 
+  default_scope -> { order('created_at desc') }
+
   def future_completed_date
     if !completed.blank? && completed > Date.today
     	self.errors.add(:completed, "can't be in the future")

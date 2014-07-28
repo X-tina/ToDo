@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-  	@tasks = tasks_order
+  	@tasks = Task.all
   	@task = Task.new
   end
 

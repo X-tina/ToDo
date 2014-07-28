@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user = current_user
     authorize! :create, @task
-    @tasks = tasks_order
+    @tasks = Task.all
     save_task
   end
 
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     @task = task_find
     @task.assign_attributes(task_params)
     authorize! :update, @task
-    @tasks = tasks_order
+    @tasks = Task.all
     save_task
   end
 
@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     @task = task_find
     authorize! :destroy, @task
     @task.destroy
-    @tasks = tasks_order
+    @tasks = Task.all
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :ok }

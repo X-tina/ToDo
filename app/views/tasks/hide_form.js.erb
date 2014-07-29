@@ -1,5 +1,5 @@
 
-$('#task-list').html('<%= j(render partial: 'tasks/task_list', locals: {tasks: @tasks}) %>');
+$('#task-list').html('<%= j(render 'tasks/task_list', tasks: @tasks) %>');
 $('#modal').modal('hide');
 
-$('tr#<%= dom_id(@task) %>').effect('highlight', { color: 'Gainsboro', duration: 2000 });
+$('tr#<%= dom_id(@task) %>').effect('highlight', { color: '#f7f7f9', duration: 2000 });

@@ -1,2 +1,7 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<style> 
+  .btn-primary {display: none;}
+</style>
+<div class="self-info">
+  <div>Your e-mail: <%= current_user.email %> </div>
+  <div>You have <span id="task_count"> <%= pluralize(@tasks.count, 'task') %> </span> </div>
+</div>

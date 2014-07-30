@@ -1,9 +1,10 @@
 require 'spec_helper'
 
-describe "Users" do
+describe "User" do
   describe "User page" do
-    it "should have content 'You have'" do
-    	expect(page).to have_content('You have')
+    it "should have content 'To Do'" do
+    	visit '/user'
+      expect(page).to have_content('To Do')
     end
   end
 end
